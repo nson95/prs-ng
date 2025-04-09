@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { User } from '../../../model/user';
 import { Subscription } from 'rxjs';
 import { UserService } from '../../../service/user.service';
+import { SystemService } from '../../../service/system.service';
 
 @Component({
   selector: 'app-user-list',
@@ -13,11 +14,13 @@ export class UserListComponent implements OnInit, OnDestroy {
   title = 'User List';
   users!: User[];
   subscription!: Subscription;
+  loggedinUser!: User;
+  welcomeMsg = "";
   sortOrder: string = "asc";
   sortCriteria: string = "id";
 
 
-  constructor(private userSvc: UserService) { }
+  constructor(private userSvc: UserService, private sysSvc: SystemService) { }
   
   delete(id: number) {
     this.subscription = this.userSvc.delete(id).subscribe({
@@ -39,6 +42,8 @@ export class UserListComponent implements OnInit, OnDestroy {
     }
   }
   ngOnInit(): void {
+    this.loggedinUser = this.sysSvc.loggedInUser
+    this.welcomeMsg = "Welcome " + this.loggedinUser.firstName + " " + this.loggedinUser.lastName;
     this.subscription = this.userSvc.list().subscribe((resp: any) => {
       this.users = resp;
   });

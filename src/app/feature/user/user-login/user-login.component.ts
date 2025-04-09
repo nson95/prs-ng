@@ -32,7 +32,7 @@ export class UserLoginComponent implements OnInit, OnDestroy {
 
         this.sysSvc.loggedInUser = resp;
         console.log("Login successful: "+resp);
-        this.router.navigateByUrl("/users/list");
+        this.router.navigateByUrl("/user-list");
         // redirect to home page or dashboard
       },
       error: (err) => {

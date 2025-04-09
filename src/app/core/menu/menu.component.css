@@ -28,3 +28,6 @@ img {
     max-width:4%;
     max-height:4%;
 }
+div {
+	text-align: right;
+}
