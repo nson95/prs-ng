@@ -15,6 +15,9 @@ import { UserLoginComponent } from './feature/user/user-login/user-login.compone
 import { VendorListComponent } from './feature/vendor/vendor-list/vendor-list.component';
 import { RequestListComponent } from './feature/request/request-list/request-list.component';
 import { SortPipe } from './pipe/sort.pipe';
+import { VendorEditComponent } from './feature/vendor/vendor-edit/vendor-edit.component';
+import { VendorCreateComponent } from './feature/vendor/vendor-create/vendor-create.component';
+import { VendorDetailComponent } from './feature/vendor/vendor-detail/vendor-detail.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { SortPipe } from './pipe/sort.pipe';
     UserLoginComponent,
     VendorListComponent,
     RequestListComponent,
-    SortPipe
+    SortPipe,
+    VendorEditComponent,
+    VendorCreateComponent,
+    VendorDetailComponent
   ],
   imports: [
     BrowserModule,

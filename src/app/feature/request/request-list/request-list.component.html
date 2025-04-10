@@ -1,3 +1,4 @@
+<app-menu></app-menu>
 <div class="p-4">
     <section class="heading">
       <span class="page-title font-weight-bold font-italic">{{ title }}</span>
@@ -16,6 +17,7 @@
         <th>Status</th>
         <th>Delivery Mode</th>
         <th>Submitted Date</th>
+        <th>Total</th>
         <th>Action</th>
         </tr>
       </thead>
@@ -29,6 +31,7 @@
           <td>{{r.status}}</td>
           <td>{{r.deliveryMode}}</td>
           <td>{{r.submittedDate}}</td>
+          <td>{{r.total}}</td>
           <td><a routerLink="/request-edit/{{ r.id }}">
             <img
               src="pencil-icon.png"

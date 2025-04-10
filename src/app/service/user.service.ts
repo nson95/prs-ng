@@ -14,6 +14,9 @@ export class UserService {
   list(): Observable<User[]> {
     return this.http.get(URL +"/") as Observable<User[]>;
   }
+  get(id: number): Observable<User> {
+      return this.http.get(URL +"/" +id) as Observable<User>;
+    }
   login(userDTO: UserDTO): Observable<User> {
     return this.http.post(URL +"/login", userDTO) as Observable<User>;
   }

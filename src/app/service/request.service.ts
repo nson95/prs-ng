@@ -13,6 +13,9 @@ export class RequestService {
   list(): Observable<Request[]> {
     return this.http.get(URL +"/") as Observable<Request[]>;
   }
+  get(id: number): Observable<Request> {
+    return this.http.get(URL +"/" +id) as Observable<Request>;
+  }
   add(request: Request): Observable<Request> {
     return this.http.post(URL, request) as Observable<Request>;
   }

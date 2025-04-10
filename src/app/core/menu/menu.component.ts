@@ -25,7 +25,8 @@ export class MenuComponent {
       new MenuItem("Vendor", "/vendor-list", "List of Vendors"),
       new MenuItem("Request", "/request-list", "List of Requests")
     ];
-    this.loggedinUser = this.sysSvc.loggedInUser
+    this.loggedinUser = this.sysSvc.loggedInUser;
+    this.sysSvc.checkLogin();
     this.welcomeMsg = "Welcome " + this.loggedinUser.firstName + " " + this.loggedinUser.lastName;
 }
 }
