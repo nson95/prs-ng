@@ -1,1 +1,68 @@
-<p>vendor-create works!</p>
+<app-menu></app-menu>
+<div class="p-4">
+    <span class="component-title">{{ title }}</span>
+    <div>
+      <main class="single">
+        <table class="table table-sm">
+          <tr>
+            <td>ID:</td>
+            <td>
+              <input [(ngModel)]="newVendor.id" class="rounded" type="text" />
+            </td>
+          </tr>
+          <tr>
+            <td>Name:</td>
+            <td>
+              <input [(ngModel)]="newVendor.name" class="rounded" type="text" />
+            </td>
+          </tr>
+          <tr>
+            <td>Code:</td>
+            <td>
+              <input [(ngModel)]="newVendor.code" class="rounded" type="text" />
+            </td>
+          </tr>
+          <tr>
+            <td>Phone Number:</td>
+            <td>
+              <input [(ngModel)]="newVendor.phoneNumber" class="rounded" type="text" />
+            </td>newVendor
+          </tr>
+          <tr>
+            <td>Email:</td>
+            <td>
+              <input [(ngModel)]="newVendor.email" class="rounded" type="text" />
+            </td>
+          </tr>
+          <tr>
+            <td>Address:</td>
+            <td>
+              <input [(ngModel)]="newVendor.address" class="rounded" type="text" />
+            </td>newVendor
+          </tr>
+          <tr>
+            <td>City:</td>
+            <td>
+              <input [(ngModel)]="newVendor.city" class="rounded" type="text" />
+            </td>
+          </tr>
+          <tr>
+            <td>State:</td>
+            <td>
+              <input [(ngModel)]="newVendor.state" class="rounded" type="text" />
+            </td>
+          </tr>
+          <tr>
+            <td>ZIP Code:</td>
+            <td>
+              <input [(ngModel)]="newVendor.zip" class="rounded" type="text" />
+            </td>
+          </tr>
+        </table>
+      </main>
+      <span
+        ><button (click)="addVendor()" class="btn btn-sm btn-primary">
+          Save
+        </button></span>
+    </div>
+  </div>

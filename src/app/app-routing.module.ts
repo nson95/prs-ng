@@ -8,6 +8,13 @@ import { NotFoundComponent } from './core/not-found/not-found.component';
 import { UserLoginComponent } from './feature/user/user-login/user-login.component';
 import { VendorListComponent } from './feature/vendor/vendor-list/vendor-list.component';
 import { RequestListComponent } from './feature/request/request-list/request-list.component';
+import { VendorDetailComponent } from './feature/vendor/vendor-detail/vendor-detail.component';
+import { VendorEditComponent } from './feature/vendor/vendor-edit/vendor-edit.component';
+import { VendorCreateComponent } from './feature/vendor/vendor-create/vendor-create.component';
+import { ProductListComponent } from './feature/product/product-list/product-list.component';
+import { ProductDetailComponent } from './feature/product/product-detail/product-detail.component';
+import { ProductCreateComponent } from './feature/product/product-create/product-create.component';
+import { RequestCreateComponent } from './feature/request/request-create/request-create.component';
 
 const URL  = 'http://localhost:8080/api/users';
 const routes: Routes = [
@@ -18,7 +25,15 @@ const routes: Routes = [
   { path: 'user-detail/:id', component: UserDetailComponent },
   { path: 'user-login', component: UserLoginComponent },
   { path : 'vendor-list', component: VendorListComponent},
+  { path : 'vendor-detail/:id', component: VendorDetailComponent},
+  { path : 'vendor-edit/:id', component: VendorEditComponent},
+  { path : 'vendor-create', component: VendorCreateComponent},
+  { path : 'product-list', component: ProductListComponent},
+  { path : 'product-detail/:id', component: ProductDetailComponent},
+  { path : 'product-edit/:id', component: ProductDetailComponent},
+  { path : 'product-create', component: ProductCreateComponent},
   { path : 'request-list', component: RequestListComponent},
+  { path : 'request-create', component: RequestCreateComponent},
   { path: '**', component: NotFoundComponent },
 ];
 

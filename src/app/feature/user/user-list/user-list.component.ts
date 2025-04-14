@@ -14,7 +14,6 @@ export class UserListComponent implements OnInit, OnDestroy {
   title = 'User List';
   users!: User[];
   subscription!: Subscription;
-  loggedinUser!: User;
   welcomeMsg = "";
   sortOrder: string = "asc";
   sortCriteria: string = "id";
@@ -42,8 +41,6 @@ export class UserListComponent implements OnInit, OnDestroy {
     }
   }
   ngOnInit(): void {
-    this.loggedinUser = this.sysSvc.loggedInUser
-    this.welcomeMsg = "Welcome " + this.loggedinUser.firstName + " " + this.loggedinUser.lastName;
     this.subscription = this.userSvc.list().subscribe((resp: any) => {
       this.users = resp;
   });

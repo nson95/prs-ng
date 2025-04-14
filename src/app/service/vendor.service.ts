@@ -14,6 +14,9 @@ export class VendorService {
   list(): Observable<Vendor[]> {
       return this.http.get(URL +"/") as Observable<Vendor[]>;
     }
+    get(id: number): Observable<Vendor> {
+          return this.http.get(URL +"/" +id) as Observable<Vendor>;
+        }
     add(vendor: Vendor): Observable<Vendor> {
       return this.http.post(URL, vendor ) as Observable<Vendor>;
     }

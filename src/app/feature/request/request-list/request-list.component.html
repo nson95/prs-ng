@@ -10,7 +10,7 @@
       <thead>
         <tr>
         <th>Id</th>
-        <th>Name</th>
+        <th>User</th>
         <th>Request Number</th>
         <th>Justification</th>
         <th>Description</th>
@@ -45,6 +45,14 @@
               width="20"
               height="20"
               title="Request Details"
+            />
+          </a>
+          |<a routerLink="/request-lines/{{ r.id }}">
+            <img
+              src="lines.png"
+              width="20"
+              height="20"
+              title="Get items for Request"
             />
           </a>|<a>
             <img

@@ -1,0 +1,67 @@
+<app-menu></app-menu>
+<div>
+    <section class="heading">
+      <span class="page-title font-weight-bold font-italic">{{ title }}</span>
+      <span> | <a routerLink="/product-list">Return to List</a></span>
+    </section>
+    <main class="single">
+      <table class="table table-sm">
+        <tr>
+          <td>Name:</td>
+          <td>
+            <input
+              [(ngModel)]="newProduct.name"
+              class="rounded"
+              type="text"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>Part Number:</td>
+          <td>
+            <input
+              [(ngModel)]="newProduct.partNumber"
+              class="rounded"
+              type="text"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>Price:</td>
+          <td>
+            <input
+              [(ngModel)]="newProduct.price"
+              class="rounded"
+              type="text"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>Vendor:</td>
+          <td>
+            <select [(ngModel)]="newProduct.vendor.id" class="rounded">
+              <option *ngFor="let v of vendors" [value]="v.id">{{ v.name }}</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Unit:</td>
+          <td>
+            <input [(ngModel)]="newProduct.unit "class="rounded" type="number" />
+        </tr>
+      
+      </table>
+    </main>
+    <span>
+      <span
+        ><a routerLink="/product-edit/{{ newProduct.id }}" class="btn btn-sm btn-warning"
+          >Edit</a
+        ></span
+      >
+      <span
+        ><button (click)="addProduct()" class="btn btn-sm btn-primary">
+          Save
+        </button></span>
+        </span>
+        </div>
+

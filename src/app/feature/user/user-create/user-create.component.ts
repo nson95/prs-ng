@@ -3,6 +3,7 @@ import { User } from '../../../model/user';
 import { Subscription } from 'rxjs';
 import { UserService } from '../../../service/user.service';
 import { Router } from '@angular/router';
+import { Vendor } from '../../../model/vendor';
 
 @Component({
   selector: 'app-user-create',
@@ -14,6 +15,7 @@ export class UserCreateComponent implements OnInit, OnDestroy {
   title: string = 'User Create';
   newUser: User = new User();
   subscription!: Subscription;
+
   
   constructor(
     private userSvc: UserService,
@@ -27,7 +29,7 @@ export class UserCreateComponent implements OnInit, OnDestroy {
   }
   addUser(): void {
     this.subscription = this.userSvc.add(this.newUser).subscribe((resp) => {
-          this.router.navigateByUrl('/movie-list');
+          this.router.navigateByUrl('/user-list');
     });
   }
 }

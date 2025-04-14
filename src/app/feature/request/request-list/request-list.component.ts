@@ -38,5 +38,8 @@ export class RequestListComponent implements OnInit, OnDestroy {
       }
     });
   }
+  getLines(id: number) {
+
 }
 
+}

@@ -1,20 +1,20 @@
 <app-menu></app-menu>
-<div *ngIf="vendor" class="component">
+<div *ngIf="product" class="component">
     <section class="heading">
       <span class="page-title font-weight-bold font-italic">{{ title }}</span>
-      <span> | <a routerLink="/vendor-list">Return to List</a></span>
+      <span> | <a routerLink="/product-list">Return to List</a></span>
     </section>
     <main class="single">
       <table class="table table-sm">
         <tr>
           <td>ID</td>
-          <td>{{ vendor.id }}</td>
+          <td>{{ product.id }}</td>
         </tr>
         <tr>
           <td>Name:</td>
           <td>
             <input
-              [(ngModel)]="vendor.name"
+              [(ngModel)]="product.name"
               class="rounded"
               type="text"
               disabled
@@ -22,10 +22,10 @@
           </td>
         </tr>
         <tr>
-          <td>Code:</td>
+          <td>Part Number:</td>
           <td>
             <input
-              [(ngModel)]="vendor.code"
+              [(ngModel)]="product.partNumber"
               class="rounded"
               type="text"
               disabled
@@ -33,10 +33,10 @@
           </td>
         </tr>
         <tr>
-          <td>Phone Number:</td>
+          <td>Price:</td>
           <td>
             <input
-              [(ngModel)]="vendor.phoneNumber"
+              [(ngModel)]="product.price"
               class="rounded"
               type="text"
               disabled
@@ -44,10 +44,10 @@
           </td>
         </tr>
         <tr>
-          <td>Email:</td>
+          <td>Vendor:</td>
           <td>
             <input
-              [(ngModel)]="vendor.email"
+              [(ngModel)]="product.vendor.name"
               class="rounded"
               type="text"
               disabled
@@ -55,36 +55,24 @@
           </td>
         </tr>
         <tr>
-          <td>Address:</td>
+          <td>Unit:</td>
           <td>
-            <input [(ngModel)]="vendor.address" class="rounded" type="text" />
-          </td>
+            <input [(ngModel)]="product.unit "class="rounded" type="number" />
         </tr>
         <tr>
-          <td>City:</td>
+          <td>Reviewer:</td>
           <td>
-            <input [(ngModel)]="vendor.city" class="rounded" type="text" />
+            <input [(ngModel)]="product.photoPath" class="rounded" type="text" />
           </td>
         </tr>
-        <tr>
-            <td>State:</td>
-            <td>
-              <input [(ngModel)]="vendor.state" class="rounded" type="text" />
-            </td>
-          </tr>
-          <tr>
-            <td>ZIP Code:</td>
-            <td>
-              <input [(ngModel)]="vendor.zip" class="rounded" type="text" />
-            </td>
-          </tr>
       </table>
     </main>
     <span>
       <span
-        ><a routerLink="/movie-edit/{{ vendor.id }}" class="btn btn-sm btn-warning"
+        ><a routerLink="/movie-edit/{{ product.id }}" class="btn btn-sm btn-warning"
           >Edit</a
-        ></span>
+        ></span
+      >
       <span>
         |
         <button (click)="delete()" class="btn btn-sm btn-danger">

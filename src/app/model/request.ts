@@ -7,6 +7,7 @@ export class Request {
     description: string;
     justification: string;
     deliveryMode: string;
+    dateNeeded: Date;
     status: string;
     total: number;
     submittedDate: Date;
@@ -18,6 +19,7 @@ export class Request {
         this.requestNumber = '';
         this.description = '';
         this.justification = '';
+        this.dateNeeded = new Date();
         this.deliveryMode = '';
         this.status = '';
         this.total = 0;
