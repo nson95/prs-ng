@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Request } from '../../../model/request';
 import { Router } from '@angular/router';
 import { RequestService } from '../../../service/request.service';
@@ -12,7 +12,7 @@ import { User } from '../../../model/user';
   templateUrl: './request-create.component.html',
   styleUrl: './request-create.component.css'
 })
-export class RequestCreateComponent {
+export class RequestCreateComponent implements OnInit, OnDestroy {
   title: string = "Create Request";
   newRequest: RequestDTO = new RequestDTO();
   subscription!: Subscription;

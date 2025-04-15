@@ -6,7 +6,7 @@
         <img width="20" height="20" src="add-icon.png" title="Add New" />
       </a>
     </section>
-    <table class="table table-striped table-hover">
+    <table *ngIf="requests"class="table table-striped table-hover">
       <thead>
         <tr>
         <th>Id</th>
@@ -47,7 +47,7 @@
               title="Request Details"
             />
           </a>
-          |<a routerLink="/request-lines/{{ r.id }}">
+          |<a routerLink="/lineitems/lines-for-req/{{ r.id }}">
             <img
               src="lines.png"
               width="20"

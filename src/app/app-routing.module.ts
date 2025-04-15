@@ -15,6 +15,8 @@ import { ProductListComponent } from './feature/product/product-list/product-lis
 import { ProductDetailComponent } from './feature/product/product-detail/product-detail.component';
 import { ProductCreateComponent } from './feature/product/product-create/product-create.component';
 import { RequestCreateComponent } from './feature/request/request-create/request-create.component';
+import { RequestLinesComponent } from './feature/request/request-lines/request-lines.component';
+import { LineitemCreateComponent } from './feature/lineitem/lineitem-create/lineitem-create.component';
 
 const URL  = 'http://localhost:8080/api/users';
 const routes: Routes = [
@@ -34,6 +36,8 @@ const routes: Routes = [
   { path : 'product-create', component: ProductCreateComponent},
   { path : 'request-list', component: RequestListComponent},
   { path : 'request-create', component: RequestCreateComponent},
+  { path : 'lineitems/lines-for-req/:id', component: RequestLinesComponent},
+  { path: 'lineitems-create/:requestId', component: LineitemCreateComponent },
   { path: '**', component: NotFoundComponent },
 ];
 
