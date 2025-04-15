@@ -13,6 +13,9 @@ export class LineitemService {
   list() {
     return this.http.get(URL + "/") as Observable<Lineitem[]>;
   }
+  getById(id: number): Observable<Lineitem> {
+    return this.http.get(URL + "/" + id) as Observable<Lineitem>;
+  }
   getReqLines(reqId: number): Observable<Lineitem[]> {
     return this.http.get(URL + "/lines-for-req/" + reqId) as Observable<Lineitem[]>;
   }

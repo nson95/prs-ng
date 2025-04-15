@@ -34,7 +34,7 @@ export class RequestCreateComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
   addRequest() {
-    this.requestSvc.add(this.newRequest).subscribe((resp) => {
+    this.subscription = this.requestSvc.add(this.newRequest).subscribe((resp) => {
       this.router.navigateByUrl('/request-list');
     });
 

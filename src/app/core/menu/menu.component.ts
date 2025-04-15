@@ -24,7 +24,8 @@ export class MenuComponent {
       new MenuItem("User", "/user-list", "List of Users"),
       new MenuItem("Vendor", "/vendor-list", "List of Vendors"),
       new MenuItem("Request", "/request-list", "List of Requests"),
-      new MenuItem("Product", "/product-list", "List of Products")
+      new MenuItem("Product", "/product-list", "List of Products"),
+      new MenuItem("Review", "/review-list", "Requests for review")
     ];
     this.loggedinUser = this.sysSvc.loggedInUser;
     this.sysSvc.checkLogin();

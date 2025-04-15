@@ -66,23 +66,10 @@
               title="Edit Lineitem"
             />
           </a>
-          | <a>
-            <img
-              src="delete.jpg"
-              width="20"
-              height="20"
-              title="Delete Lineitem"
-              (click)="delete(rl.id)"
-            />
-          </a></td>
+         </td>
         </tr>
       </ng-container>
       </tbody>
-      </table><span>
-        <span *ngIf="request.status == 'NEW'">
-          <button (click)="submitRequest()" class="btn btn-sm btn-primary">
-          Submit
-        >
-        </button></span>
+      </table>
+      <span>
         </span>
-        </div>

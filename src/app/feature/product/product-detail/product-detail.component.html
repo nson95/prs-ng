@@ -7,10 +7,6 @@
     <main class="single">
       <table class="table table-sm">
         <tr>
-          <td>ID</td>
-          <td>{{ product.id }}</td>
-        </tr>
-        <tr>
           <td>Name:</td>
           <td>
             <input
@@ -57,19 +53,13 @@
         <tr>
           <td>Unit:</td>
           <td>
-            <input [(ngModel)]="product.unit "class="rounded" type="number" />
-        </tr>
-        <tr>
-          <td>Reviewer:</td>
-          <td>
-            <input [(ngModel)]="product.photoPath" class="rounded" type="text" />
-          </td>
+            <input [(ngModel)]="product.unit "class="rounded" type="number" disabled />
         </tr>
       </table>
     </main>
     <span>
       <span
-        ><a routerLink="/movie-edit/{{ product.id }}" class="btn btn-sm btn-warning"
+        ><a routerLink="/product-edit/{{ product.id }}" class="btn btn-sm btn-warning"
           >Edit</a
         ></span
       >

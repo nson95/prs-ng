@@ -47,7 +47,6 @@
         <th>Quantity</th>
         <th>Price</th>
         <th>Line Total</th>
-        <th>Action</th>
         </tr>
       </thead>
       <tbody>
@@ -58,31 +57,11 @@
           <td>{{rl.quantity}}</td>
           <td>{{rl.product.price}}</td>
           <td>{{rl.lineTotal}}</td>
-          <td><a routerLink="/lineitem-edit/{{ rl.id }}">
-            <img
-              src="pencil-icon.png"
-              width="20"
-              height="20"
-              title="Edit Lineitem"
-            />
-          </a>
-          | <a>
-            <img
-              src="delete.jpg"
-              width="20"
-              height="20"
-              title="Delete Lineitem"
-              (click)="delete(rl.id)"
-            />
-          </a></td>
         </tr>
       </ng-container>
       </tbody>
-      </table><span>
-        <span *ngIf="request.status == 'NEW'">
-          <button (click)="submitRequest()" class="btn btn-sm btn-primary">
-          Submit
-        >
-        </button></span>
+    </table>
+      <span>
+        <button (click)="approveRequest()">Approve</button><input type="text" [(ngModel)]="request.reasonForRejection" />
+        <button (click)="rejectRequest()" class="btn btn-sm btn-danger">Reject</button>
         </span>
-        </div>

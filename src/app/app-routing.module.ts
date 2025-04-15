@@ -17,6 +17,11 @@ import { ProductCreateComponent } from './feature/product/product-create/product
 import { RequestCreateComponent } from './feature/request/request-create/request-create.component';
 import { RequestLinesComponent } from './feature/request/request-lines/request-lines.component';
 import { LineitemCreateComponent } from './feature/lineitem/lineitem-create/lineitem-create.component';
+import { LineitemEditComponent } from './feature/lineitem/lineitem-edit/lineitem-edit.component';
+import { ReviewListComponent } from './feature/review/review-list/review-list.component';
+import { RequestDetailComponent } from './feature/request-detail/request-detail.component';
+import { RequestReviewComponent } from './feature/request-review/request-review.component';
+import { ProductEditComponent } from './feature/product/product-edit/product-edit.component';
 
 const URL  = 'http://localhost:8080/api/users';
 const routes: Routes = [
@@ -32,12 +37,16 @@ const routes: Routes = [
   { path : 'vendor-create', component: VendorCreateComponent},
   { path : 'product-list', component: ProductListComponent},
   { path : 'product-detail/:id', component: ProductDetailComponent},
-  { path : 'product-edit/:id', component: ProductDetailComponent},
+  { path : 'product-edit/:id', component: ProductEditComponent},
   { path : 'product-create', component: ProductCreateComponent},
   { path : 'request-list', component: RequestListComponent},
   { path : 'request-create', component: RequestCreateComponent},
+  { path : 'request-detail/:id', component: RequestDetailComponent},
+  { path : 'request-review/:id', component: RequestReviewComponent},
   { path : 'lineitems/lines-for-req/:id', component: RequestLinesComponent},
-  { path: 'lineitems-create/:requestId', component: LineitemCreateComponent },
+  { path: 'lineitem-create/:id', component: LineitemCreateComponent },
+  { path: 'lineitem-edit/:id', component: LineitemEditComponent },
+  { path: 'review-list', component: ReviewListComponent },
   { path: '**', component: NotFoundComponent },
 ];
 
