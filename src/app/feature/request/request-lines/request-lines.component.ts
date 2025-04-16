@@ -69,6 +69,7 @@ export class RequestLinesComponent implements OnInit, OnDestroy {
     });
   }
   submitRequest(): void {
+  
     this.subscription = this.requestSvc.submitReview(this.request.id).subscribe((resp) => {
       this.request = resp;
       this.router.navigateByUrl('/request-detail/' + this.request.id);
