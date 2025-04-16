@@ -28,6 +28,7 @@ export class RequestLinesComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.requestId = this.actRoute.snapshot.params['id'];
+    this.refreshLineitem();
     this.subscription = this.lineitemSvc.getReqLines(this.requestId).subscribe((resp) => {
       this.lineitems = resp;
       for (let li of this.lineitems) {

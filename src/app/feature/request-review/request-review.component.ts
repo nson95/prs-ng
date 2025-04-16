@@ -5,6 +5,8 @@ import { Lineitem } from '../../model/lineitem';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LineitemService } from '../../service/lineitem.service';
 import { RequestService } from '../../service/request.service';
+import { SystemService } from '../../service/system.service';
+import { User } from '../../model/user';
 
 @Component({
   selector: 'app-request-review',
@@ -18,17 +20,20 @@ export class RequestReviewComponent implements OnInit, OnDestroy {
   request!: Request;
   subscription!: Subscription;
   lineitems: Lineitem[] = new Array<Lineitem>(); 
+  loggedinUser!: User;
 
 
   constructor(
     private requestSvc: RequestService,
     private actRoute: ActivatedRoute,
     private lineitemSvc: LineitemService,
-    private router: Router
+    private router: Router,
+    private sysSvc: SystemService
   )
   {}
 
   ngOnInit(): void {
+    this.loggedinUser = this.sysSvc.loggedInUser;
     this.subscription = this.actRoute.params.subscribe((params) => {
       this.requestId = params['id'];
       this.subscription = this.requestSvc.get(this.requestId).subscribe((resp) => {

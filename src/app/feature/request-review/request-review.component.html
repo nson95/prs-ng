@@ -1,5 +1,6 @@
 <app-menu></app-menu>
-<div class="p-4" *ngIf="request">
+<ng-container *ngIf="request">
+<div class="p-4" *ngIf="this.loggedinUser.reviewer == true">
     <section class="heading">
       <span class="page-title font-weight-bold font-italic">Request</span>
       <span> | <a routerLink="/request-list">Return to List</a></span>
@@ -63,5 +64,7 @@
     </table>
       <span>
         <button (click)="approveRequest()">Approve</button><input type="text" [(ngModel)]="request.reasonForRejection" />
-        <button (click)="rejectRequest()" class="btn btn-sm btn-danger">Reject</button>
+        <button (click)="rejectRequest()" class="btn btn-sm btn-danger" *ngIf = "request.reasonForRejection ">Reject</button>
         </span>
+        </div>
+    </ng-container>
