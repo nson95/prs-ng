@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MenuItem } from '../../model/menu-item';
 import { User } from '../../model/user';
 import { SystemService } from '../../service/system.service';
@@ -9,7 +9,7 @@ import { SystemService } from '../../service/system.service';
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.css'
 })
-export class MenuComponent {
+export class MenuComponent implements OnInit {
   title: string = "Menu";
   menuItems: MenuItem[] = [];
   loggedinUser!: User;
@@ -25,10 +25,14 @@ export class MenuComponent {
       new MenuItem("Vendor", "/vendor-list", "List of Vendors"),
       new MenuItem("Request", "/request-list", "List of Requests"),
       new MenuItem("Product", "/product-list", "List of Products"),
-      new MenuItem("Review", "/review-list", "Requests for review")
+      new MenuItem("Review", "/review-list", "Requests for Review")
     ];
     this.loggedinUser = this.sysSvc.loggedInUser;
     this.sysSvc.checkLogin();
     this.welcomeMsg = "Welcome " + this.loggedinUser.firstName + " " + this.loggedinUser.lastName;
 }
+
+  logout(): void {
+    this.sysSvc.logout();
+  }
 }
